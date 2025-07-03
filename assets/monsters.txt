@@ -1,0 +1,4 @@
+Umbridge, 20, 20
+Malfoy, 40, 40
+Bellatrix, 60, 60
+Voldemort, 80, 80
