@@ -1,16 +1,20 @@
 import 'dart:io';
 import 'package:rpggame_dart/character.dart';
+import 'package:rpggame_dart/monster.dart';
+import 'dart:math';
 
 
 void main() {
 String name = getCharacterName(); // 호출
-Character stat = Character.fromfile(name);
+Character stat = Character.fromfile(name); // 캐릭터 스탯 파일 호출
 print("캐릭터 이름: ${stat.name}");
 print("HP : ${stat.hp}");
 print("공격력 : ${stat.power}");
 print("방어력 : ${stat.shield}");
 
-print("게임을 시작합니다!!!!");
+List<Monster> monsters = Monster.fromFileList(); // 몬스터 스탯 파일 호출
+Monster pick = getRandomMonster(monsters);
+
 }
 
 
@@ -33,8 +37,21 @@ while(true) {
   }
 }
 
+Monster getRandomMonster(List<Monster> monsters) { // 싸울 수 있는 몬스터들이 담긴 리스트
+Random random = Random(); //  랜덤 숫자를 만들 준비 완료
+int randomIndex = random.nextInt(monsters.length); // 랜덤으로 몇 번째 몬스터 뽑을지 번호 결정
+Monster pick = monsters[randomIndex]; // 랜덤 인덱스로 리스트에서 몬스터 하나 가져옴
+  return pick; // 선택한 몬스터를 함수 밖으로 돌려줌
+}
+
+// Game game = Game() {
+//   while(true) {
+//     print("게임을 시작합니다!!!!!");
+//     print("당신의 목표 : 모든 몬스터를 물리치세요!");
 
 
+//   }
+// }
 
 
 
