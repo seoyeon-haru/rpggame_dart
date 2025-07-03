@@ -1,12 +1,16 @@
-import 'dart:ffi';
 import 'dart:io';
-
 import 'package:rpggame_dart/character.dart';
-import 'package:rpggame_dart/game.dart';
-import 'package:rpggame_dart/monster.dart';
+
 
 void main() {
 String name = getCharacterName(); // 호출
+Character stat = Character.fromfile(name);
+print("캐릭터 이름: ${stat.name}");
+print("HP : ${stat.hp}");
+print("공격력 : ${stat.power}");
+print("방어력 : ${stat.shield}");
+
+print("게임을 시작합니다!!!!");
 }
 
 
@@ -28,6 +32,7 @@ while(true) {
   }
   }
 }
+
 
 
 
