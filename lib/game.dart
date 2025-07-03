@@ -36,6 +36,7 @@ class Game {
       if (killCount >= totalMonsters) {
         // 물리친 횟수가 몬스터 수보다 많으면
         print("모든 몬스터를 물리쳤습니다!!승리"); // 승리
+        saveResult("승리");
         return; // 게임 끝
       }
       Monster monster = getRandomMonster(monsters); //랜덤 몬스터 하나 뽑기
@@ -73,6 +74,21 @@ class Game {
         print("${monster.name}을(를) 물리쳤습니다!");
         break;
       }
+    }
+  }
+  void saveResult(String result) {
+    print("결과를 저장하시겠습니까? (y/n)");
+    String? answer = stdin.readLineSync();
+    if (answer == 'y') {
+      File file = File('result.txt');
+      file.writeAsStringSync(
+        "캐릭터 이름: ${character.name}\n"
+        "남은 체력: ${character.hp}\n"
+        "결과: $result"
+      );
+      print("결과가 result.txt에 저장되었습니다!");
+    } else {
+      print("결과를 저장하지 않았습니다.");
     }
   }
 }
