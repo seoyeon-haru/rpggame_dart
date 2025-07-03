@@ -1,2 +1,21 @@
-A sample command-line application with an entrypoint in `bin/`, library code
-in `lib/`, and example unit test in `test/`.
+## 💜Dart RPG 게임 
+### 💜프로젝트 소개
+
+---
+### 💜 주요 기능
+ ##### ✏️ 캐릭터 이름  사용자가 입력
+ #####  ✏️ 입력하면 스탯 출력
+ ##### ✏️ 랜덤으로 몬스터 출력
+ ##### ✏️ 1 입력시 공격 2 입력 시 방어
+ ##### ✏️ 몬스터 물리치면 다음 몬스터와 대결?  문구 출력
+ ##### ✏️ 캐릭터 피가 0이 되면 게임 종료
+ ##### ✏️ 게임 결과 저장
+---
+
+✏️ lib/ character.dart: `Character`클래스 생성, 캐릭터 스탯 파일 불러오기, 몬스터 공격, 몬스터 공격 방어, 상태 출력
+
+✏️ lib/ game.dart: 몬스터 랜덤 출력, 게임 진행
+
+✏️ bin/ monster.dart: `Monster` 클래스 생성, 몬스터 스탯 파일 불러오기, 몬스터 공격, 상태 출력
+
+😭 문법을 다시 공부해서 주말 동안 과제를 다시 해볼 생각이다.......
