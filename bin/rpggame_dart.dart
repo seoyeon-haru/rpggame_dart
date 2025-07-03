@@ -14,7 +14,6 @@ print("공격력 : ${stat.power}");
 print("방어력 : ${stat.shield}");
 
 List<Monster> monsters = Monster.fromFileList(); // 몬스터 스탯 파일 호출
-Monster pick = getRandomMonster(monsters);
 Game game = Game(stat, monsters);
 game.startGame();
 }
@@ -37,11 +36,4 @@ while(true) {
     return userInput; // 이름 확정
   }
   }
-}
-
-Monster getRandomMonster(List<Monster> monsters) { // 싸울 수 있는 몬스터들이 담긴 리스트
-Random random = Random(); //  랜덤 숫자를 만들 준비 완료
-int randomIndex = random.nextInt(monsters.length); // 랜덤으로 몇 번째 몬스터 뽑을지 번호 결정
-Monster pick = monsters[randomIndex]; // 랜덤 인덱스로 리스트에서 몬스터 하나 가져옴
-  return pick; // 선택한 몬스터를 함수 밖으로 돌려줌
 }
